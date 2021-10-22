@@ -7,9 +7,10 @@ set /p proxy_url=proxy url:
 set proxy=-x %proxy_url% 
 :main
 code --version | wsl sed -n 2p > uvsow2
-set /p commit_id=<uvsow2 && echo commit_id:%commit_id% &&^
-del uvsow* &&^
-curl -L "https://update.code.visualstudio.com/commit:%commit_id%/server-linux-x64/stable" %proxy% -o vscode-server-linux-x64.tar.gz &&^
+set /p commit_id=<uvsow2
+echo commit_id:%commit_id%
+del uvsow*
+curl -L "https://update.code.visualstudio.com/commit:%commit_id%/server-linux-x64/stable" %proxy% -o vscode-server-linux-x64.tar.gz
 wsl dir=$(pwd);^
     cd ~;^
     mv $dir/vscode-server-linux-x64.tar.gz ./;^
