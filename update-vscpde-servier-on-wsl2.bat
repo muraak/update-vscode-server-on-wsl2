@@ -15,5 +15,5 @@ wsl dir=$(pwd);^
     cd ~;^
     mv $dir/vscode-server-linux-x64.tar.gz ./;^
     mkdir ~/.vscode-server/bin/%commit_id%;^
-    tar zxvf vscode-server-linux-x64.tar.gz -C /home/muraak/.vscode-server/bin/%commit_id% --strip 1;^
+    tar zxvf vscode-server-linux-x64.tar.gz -C ~/.vscode-server/bin/%commit_id% --strip 1;^
     touch ~/.vscode-server/bin/%commit_id%\0;^
